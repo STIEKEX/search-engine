@@ -1,0 +1,6 @@
+node_modules/
+.env
+
+# Private notes and planning docs: kept locally, not published
+/CLAUDE.md
+/docs/
