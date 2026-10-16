@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head><title>Mock Home</title></head>
+<body>
+  <nav><a href="about.html">About (nav)</a></nav>
+  <main>
+    <h1>Welcome to the mock shop</h1>
+    <p>This site exists only for crawler tests.</p>
+    <ul>
+      <li><a href="about.html#team">About, with a fragment (duplicate)</a></li>
+      <li><a href="./about.html">About, relative with ./ (duplicate)</a></li>
+      <li><a href="products/a.html">Product A</a></li>
+      <li><a href="products/b.html">Product B</a></li>
+      <li><a href="private/secret.html">Secret (disallowed by robots.txt)</a></li>
+      <li><a href="deep/level1.html">Go deeper</a></li>
+      <li><a href="/moved">Old link that redirects to about.html</a></li>
+      <li><a href="/missing.html">Broken link (404)</a></li>
+      <li><a href="image.png">An image, not HTML</a></li>
+      <li><a href="https://example.com/external">External site</a></li>
+      <li><a href="mailto:owner@example.com">Email</a></li>
+      <li><a href="javascript:void(0)">Script link</a></li>
+    </ul>
+  </main>
+</body>
+</html>
