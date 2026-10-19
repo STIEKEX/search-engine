@@ -8,7 +8,8 @@ import { crawl, parseCliArgs } from "../../crawler/crawl.js";
 import { createFetcher } from "../../crawler/fetcher.js";
 import { createPoliteness } from "../../crawler/politeness.js";
 import { createRobots } from "../../crawler/robots.js";
-import { createBlobStore, sha256 } from "../../crawler/storage.js";
+import { sha256 } from "../../crawler/storage/BlobStore.js";
+import { LocalBlobStore } from "../../crawler/storage/LocalBlobStore.js";
 import { startMockServer } from "../helpers/mockServer.js";
 import { startTestDb } from "../helpers/testDb.js";
 
@@ -21,7 +22,7 @@ let fetcher;
 before(async () => {
   db = await startTestDb();
   dataDir = await mkdtemp(path.join(os.tmpdir(), "crawl-test-"));
-  fetcher = createFetcher({ userAgent: USER_AGENT, totalTimeoutMs: 2000 });
+  fetcher = createFetcher({ userAgent: USER_AGENT, allowPrivateNetworks: true, totalTimeoutMs: 2000 });
 });
 after(async () => {
   await server?.close();
@@ -39,7 +40,7 @@ beforeEach(async () => {
 function runCrawl(limits, { minDelayMs = 0 } = {}) {
   const politeness = createPoliteness({ minDelayMs });
   const robots = createRobots({ fetcher, politeness, userAgent: USER_AGENT });
-  const store = createBlobStore(dataDir);
+  const store = new LocalBlobStore(dataDir);
   return crawl({ seeds: [server.url("/")], ...limits }, { fetcher, robots, politeness, store });
 }
 
@@ -136,7 +137,7 @@ test("politeness: requests to the same host start >= 1 s apart", async () => {
 test("an invalid seed is reported, not fatal", async () => {
   const politeness = createPoliteness({ minDelayMs: 0 });
   const robots = createRobots({ fetcher, politeness, userAgent: USER_AGENT });
-  const summary = await crawl({ seeds: ["not a url"] }, { fetcher, robots, politeness, store: createBlobStore(dataDir) });
+  const summary = await crawl({ seeds: ["not a url"] }, { fetcher, robots, politeness, store: new LocalBlobStore(dataDir) });
   assert.equal(summary.invalidSeeds, 1);
   assert.equal(summary.attempted, 0);
 });

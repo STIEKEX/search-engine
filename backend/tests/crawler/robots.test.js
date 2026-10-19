@@ -13,7 +13,7 @@ let fetcher;
 
 before(async () => {
   db = await startTestDb();
-  fetcher = createFetcher({ userAgent: USER_AGENT, totalTimeoutMs: 2000 });
+  fetcher = createFetcher({ userAgent: USER_AGENT, allowPrivateNetworks: true, totalTimeoutMs: 2000 });
 });
 after(async () => {
   await fetcher.close();

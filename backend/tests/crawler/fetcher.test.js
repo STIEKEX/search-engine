@@ -10,7 +10,7 @@ let fetcher;
 before(async () => {
   server = await startMockServer();
   // Short timeouts so the timeout test finishes quickly.
-  fetcher = createFetcher({ userAgent: USER_AGENT, totalTimeoutMs: 500, headersTimeoutMs: 500, bodyTimeoutMs: 500 });
+  fetcher = createFetcher({ userAgent: USER_AGENT, allowPrivateNetworks: true, totalTimeoutMs: 500, headersTimeoutMs: 500, bodyTimeoutMs: 500 });
 });
 
 after(async () => {

@@ -4,19 +4,29 @@
 
 import { MongoMemoryServer } from "mongodb-memory-server";
 import mongoose from "mongoose";
-import Domain from "../../server/models/Domain.js";
-import Page from "../../server/models/Page.js";
+// Imported for their side effect: registering the models, so init() below
+// builds their indexes. Several unique indexes are part of correctness.
+import "../../server/models/Content.js";
+import "../../server/models/Counter.js";
+import "../../server/models/CrawlJob.js";
+import "../../server/models/CrawlUrl.js";
+import "../../server/models/Domain.js";
+import "../../server/models/HostSlot.js";
+import "../../server/models/Page.js";
+import "../../server/models/QueueMessage.js";
 
 export async function startTestDb() {
   const mongod = await MongoMemoryServer.create();
-  await mongoose.connect(mongod.getUri("crawler-test"));
-  // Build indexes now (unique on normalizedUrl/origin) instead of in the background,
-  // so tests that rely on them are not racing the index build.
-  await Promise.all([Page.init(), Domain.init()]);
+  const uri = mongod.getUri("crawler-test");
+  await mongoose.connect(uri);
+  // Build indexes now instead of in the background, so tests that rely on
+  // them (unique URL per job, one message per URL) are not racing the build.
+  await Promise.all(mongoose.modelNames().map((name) => mongoose.model(name).init()));
 
   return {
+    uri,
     async clear() {
-      await Promise.all([Page.deleteMany({}), Domain.deleteMany({})]);
+      await Promise.all(Object.values(mongoose.connection.collections).map((c) => c.deleteMany({})));
     },
     async stop() {
       await mongoose.disconnect();

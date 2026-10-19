@@ -22,7 +22,7 @@ import { hostOf, normalizeUrl } from "./normalizeUrl.js";
 import { parsePage } from "./parse.js";
 import { createPoliteness } from "./politeness.js";
 import { createRobots } from "./robots.js";
-import { createBlobStore, DEFAULT_DATA_DIR } from "./storage.js";
+import { DEFAULT_DATA_DIR, LocalBlobStore } from "./storage/LocalBlobStore.js";
 
 export const DEFAULT_LIMITS = { maxPages: 50, maxDepth: 2, maxLinksPerPage: 100, sameHostOnly: true };
 
@@ -281,7 +281,7 @@ async function main() {
   const politeness = createPoliteness({ minDelayMs: Math.max(1000, Number(process.env.CRAWLER_MIN_DELAY_MS) || 0) });
   const fetcher = createFetcher({ userAgent });
   const robots = createRobots({ fetcher, politeness, userAgent });
-  const store = createBlobStore(process.env.CRAWLER_DATA_DIR || DEFAULT_DATA_DIR);
+  const store = new LocalBlobStore(process.env.CRAWLER_DATA_DIR || DEFAULT_DATA_DIR);
 
   try {
     const summary = await crawl(options, { fetcher, robots, politeness, store, log: console.log });

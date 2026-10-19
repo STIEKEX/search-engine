@@ -3,14 +3,15 @@ import assert from "node:assert/strict";
 import { mkdtemp, readdir, rm } from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
-import { createBlobStore, sha256 } from "../../crawler/storage.js";
+import { sha256 } from "../../crawler/storage/BlobStore.js";
+import { LocalBlobStore } from "../../crawler/storage/LocalBlobStore.js";
 
 let dir;
 let store;
 
 before(async () => {
   dir = await mkdtemp(path.join(os.tmpdir(), "blobstore-test-"));
-  store = createBlobStore(dir);
+  store = new LocalBlobStore(dir);
 });
 
 after(() => rm(dir, { recursive: true, force: true }));

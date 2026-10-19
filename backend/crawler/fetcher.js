@@ -3,12 +3,14 @@
 //   - bounce us around      -> redirects followed by hand, max 5, loops detected
 //   - fill our memory/disk  -> body streamed and cut off at maxBytes (2 MB)
 //   - parse junk            -> only allowed content types (text/html by default)
+//   - reach our own network -> SSRF guard on every hop (see ssrf.js)
 // The function never throws for network problems: it always returns a result
 // object with `ok`, `errorCode` and `error`, so the crawler can record WHY a
 // page failed instead of crashing.
 
 import { Agent, request } from "undici";
 import { normalizeUrl } from "./normalizeUrl.js";
+import { createSsrfGuard } from "./ssrf.js";
 
 const REDIRECT_STATUSES = new Set([301, 302, 303, 307, 308]);
 export const HTML_TYPES = ["text/html", "application/xhtml+xml"];
@@ -24,6 +26,10 @@ export const DEFAULT_FETCH_OPTIONS = {
   maxBytes: 2 * 1024 * 1024,
   allowedTypes: HTML_TYPES, // null = accept any content type (used for robots.txt)
   beforeRequest: null, // async (url, hop) => null to go on, or a reason string to stop
+  // SSRF: private/loopback/metadata addresses are refused unless this is true.
+  // Only tests against a local mock server set it, and they set it explicitly.
+  allowPrivateNetworks: false,
+  ssrf: {}, // test hooks: { isBlocked, lookup } (see ssrf.js)
 };
 
 /**
@@ -33,22 +39,31 @@ export const DEFAULT_FETCH_OPTIONS = {
 export function createFetcher(options = {}) {
   const base = { ...DEFAULT_FETCH_OPTIONS, ...options };
   if (!base.userAgent) throw new Error("createFetcher: userAgent is required");
-  const agent = new Agent({ connect: { timeout: base.connectTimeoutMs } });
+  const guard = createSsrfGuard({ allowPrivateNetworks: base.allowPrivateNetworks, ...base.ssrf });
+  // Every socket this agent opens resolves DNS through guard.lookup, so the
+  // address we validate is exactly the address we connect to.
+  const connect = { timeout: base.connectTimeoutMs, ...(guard.lookup && { lookup: guard.lookup }) };
+  const agent = new Agent({ connect });
 
   async function fetchUrl(url, overrides = {}) {
-    const opts = { ...base, ...overrides };
+    const opts = { ...base, ...overrides, guard };
     const result = newResult(url);
     try {
       await followChain(result, opts, agent);
     } catch (err) {
-      const timedOut = isTimeout(err);
-      fail(result, timedOut ? "timeout" : "network", timedOut ? `Timed out: ${err.message}` : err.message);
+      fail(result, ...classifyError(err));
     }
     result.finishedAt = new Date();
     return result;
   }
 
   return { fetchUrl, close: () => agent.close() };
+}
+
+function classifyError(err) {
+  if (err?.code === "ERR_SSRF_BLOCKED" || err?.cause?.code === "ERR_SSRF_BLOCKED") return ["ssrf_blocked", err.message];
+  if (isTimeout(err)) return ["timeout", `Timed out: ${err.message}`];
+  return ["network", err.message];
 }
 
 function newResult(url) {
@@ -59,6 +74,7 @@ function newResult(url) {
     redirects: [], // every URL we were redirected to, in order
     httpStatus: null,
     contentType: null,
+    charset: null, // from Content-Type; kept so stored bytes can be decoded later
     sizeBytes: 0,
     body: null, // Buffer: the exact bytes, used for the content hash
     text: null, // body decoded to a string, used for parsing
@@ -87,6 +103,9 @@ async function followChain(result, opts, agent) {
 
   for (let hop = 0; ; hop++) {
     seen.add(current);
+    // SSRF check on EVERY hop: a public page may redirect to http://10.0.0.1/.
+    const ssrfReason = opts.guard.checkUrl(current);
+    if (ssrfReason) return fail(result, "ssrf_blocked", ssrfReason);
     const stopReason = opts.beforeRequest ? await opts.beforeRequest(current, hop) : null;
     if (stopReason) return fail(result, "blocked", stopReason);
 
@@ -129,6 +148,7 @@ function send(url, opts, agent) {
 async function readResponse(result, res, opts) {
   const contentTypeHeader = firstHeader(res.headers["content-type"]) ?? "";
   result.contentType = contentTypeHeader.split(";")[0].trim().toLowerCase() || null;
+  result.charset = charsetOf(contentTypeHeader);
 
   if (res.statusCode < 200 || res.statusCode >= 300) {
     await res.body.dump();
@@ -150,7 +170,7 @@ async function readResponse(result, res, opts) {
   result.ok = true;
   result.body = body;
   result.sizeBytes = body.length;
-  result.text = decode(body, contentTypeHeader);
+  result.text = decode(body, result.charset);
   return result;
 }
 
@@ -169,11 +189,14 @@ async function readCapped(stream, maxBytes) {
   return Buffer.concat(chunks);
 }
 
-/** Decode bytes using the charset from Content-Type, falling back to UTF-8. */
-function decode(buffer, contentTypeHeader) {
-  const charset = /charset\s*=\s*"?([\w.:-]+)/i.exec(contentTypeHeader)?.[1] ?? "utf-8";
+function charsetOf(contentTypeHeader) {
+  return /charset\s*=\s*"?([\w.:-]+)/i.exec(contentTypeHeader)?.[1]?.toLowerCase() ?? null;
+}
+
+/** Decode bytes with the given charset label, falling back to UTF-8. */
+export function decode(buffer, charset) {
   try {
-    return new TextDecoder(charset).decode(buffer);
+    return new TextDecoder(charset ?? "utf-8").decode(buffer);
   } catch {
     return new TextDecoder("utf-8").decode(buffer); // unknown charset label
   }
