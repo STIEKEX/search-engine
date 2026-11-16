@@ -1,0 +1,17 @@
+{
+  "seeds": ["https://simple.wikipedia.org/wiki/Wikipedia:List_of_articles_all_languages_should_have"],
+  "limits": {
+    "maxPages": 1100,
+    "maxPagesPerHost": 1100,
+    "maxDepth": 1,
+    "maxLinksPerPage": 1000,
+    "maxResponseBytes": 5242880,
+    "jobTimeoutMs": 10800000,
+    "excludePatterns": [
+      "^https://simple\\.wikipedia\\.org/(?!wiki/)",
+      "/wiki/(Special|Talk|User|File|MediaWiki|Template|Help|Category|Portal|Module|Draft|TimedText)(_talk)?:",
+      "/wiki/Wikipedia(_talk)?:(?!List_of_articles_all_languages_should_have$)",
+      "\\?"
+    ]
+  }
+}

@@ -11,14 +11,21 @@ import Counter from "../../server/models/Counter.js";
 
 /** Take one unit from budget `key` (limit `max`). @returns {Promise<boolean>} */
 export async function take(key, max) {
-  try {
-    await Counter.findOneAndUpdate({ _id: key, n: { $lt: max } }, { $inc: { n: 1 } }, { upsert: true });
-    return true;
-  } catch (err) {
-    // The filter did not match because n >= max, so the upsert tried to INSERT
-    // a second document with the same _id, and the unique _id refused it.
-    if (err.code === 11000) return false;
-    throw err;
+  // At most two attempts. A duplicate-key error (E11000) has two causes:
+  //   1. n >= max: the filter did not match, so the upsert tried to INSERT a
+  //      second document with the same _id. The budget really is used up.
+  //   2. The counter did not exist yet and several workers raced: ALL of them
+  //      tried to insert it, one won, the rest got E11000 with budget left.
+  // After a first E11000 the document certainly exists, so cause 2 cannot
+  // happen again: a second E11000 can only mean cause 1.
+  for (let attempt = 1; ; attempt++) {
+    try {
+      await Counter.findOneAndUpdate({ _id: key, n: { $lt: max } }, { $inc: { n: 1 } }, { upsert: true });
+      return true;
+    } catch (err) {
+      if (err.code !== 11000) throw err;
+      if (attempt === 2) return false;
+    }
   }
 }
 

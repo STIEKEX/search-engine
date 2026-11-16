@@ -2,7 +2,7 @@ import { Router } from "express";
 import { z } from "zod";
 import { JobNotFoundError } from "../../crawler/jobs/errors.js";
 import { countByState, jobStats, listFailures } from "../../crawler/jobs/jobStats.js";
-import { changeJobStatus, createJob, retryFailures } from "../../crawler/jobs/jobService.js";
+import { changeJobStatus, createJob, refreshJob, retryFailures } from "../../crawler/jobs/jobService.js";
 import { normalizeUrl } from "../../crawler/normalizeUrl.js";
 import CrawlJob from "../models/CrawlJob.js";
 import { checkIdParam, validate } from "./validation.js";
@@ -41,6 +41,7 @@ const limitsSchema = z
     maxPagesPerHost: int(1, 10_000),
     excludePatterns: z.array(regexSource).max(20),
     sameHostOnly: z.boolean(),
+    order: z.enum(["bfs", "inlinks"]), // bfs = oldest first; inlinks = most linked-to first
   })
   .partial()
   .strict(); // unknown keys are errors: a typo like "maxPage" must not be silently ignored
@@ -98,6 +99,23 @@ router.get("/jobs/:id/failures", async (req, res) => {
 router.post("/jobs/:id/failures/retry", async (req, res) => {
   const job = await findJob(req.params.id);
   res.json({ retried: await retryFailures(job._id, req.app.locals.queues) });
+});
+
+const refreshSchema = z
+  .object({
+    olderThanDays: z.number().min(0).max(365).default(7), // re-check pages fetched before this
+    limit: int(1, 10_000).default(1000),
+  })
+  .strict();
+
+// POST /api/jobs/:id/refresh { olderThanDays, limit }: re-crawl stale pages
+// with conditional requests (unchanged pages answer 304 and are not re-parsed).
+router.post("/jobs/:id/refresh", async (req, res) => {
+  const body = validate(refreshSchema, req.body ?? {}, res);
+  if (!body) return;
+  const job = await findJob(req.params.id);
+  const queued = await refreshJob(job._id, { olderThanMs: body.olderThanDays * 24 * 60 * 60 * 1000, limit: body.limit }, req.app.locals.queues);
+  res.json({ queued });
 });
 
 export default router;

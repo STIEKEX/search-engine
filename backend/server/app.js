@@ -1,9 +1,14 @@
 import express from "express";
 import { createQueues, readConfig } from "../crawler/config.js";
 import { LocalBlobStore } from "../crawler/storage/LocalBlobStore.js";
+import { createIndexCache } from "./lib/indexCache.js";
+import analyticsRouter from "./routes/analytics.js";
 import healthRouter from "./routes/health.js";
+import invertedIndexRouter from "./routes/invertedIndex.js";
 import jobsRouter from "./routes/jobs.js";
 import pagesRouter from "./routes/pages.js";
+import searchRouter from "./routes/search.js";
+import suggestRouter from "./routes/suggest.js";
 
 const app = express();
 
@@ -14,6 +19,7 @@ app.use(express.json());
 const config = readConfig();
 app.locals.queues = createQueues(config);
 app.locals.blobStore = new LocalBlobStore(config.dataDir);
+app.locals.indexCache = createIndexCache();
 
 // GET /: a friendly landing response so opening the base URL doesn't look like an error.
 app.get("/", (req, res) => {
@@ -23,6 +29,10 @@ app.get("/", (req, res) => {
 app.use("/api", healthRouter);
 app.use("/api", jobsRouter);
 app.use("/api", pagesRouter);
+app.use("/api", invertedIndexRouter);
+app.use("/api", searchRouter);
+app.use("/api", suggestRouter);
+app.use("/api", analyticsRouter);
 
 // No route matched. Must stay after all routes.
 app.use((req, res) => {

@@ -22,6 +22,9 @@ export function readConfig(env = process.env) {
     // waits (about concurrency x 1 s for one busy host) plus the fetch timeout.
     visibilityTimeoutMs: int(env.QUEUE_VISIBILITY_TIMEOUT_MS, 120_000),
     maxRetries: int(env.QUEUE_MAX_RETRIES, 3),
+    // A politeness wait longer than this puts the message back in the queue
+    // instead of making the worker sleep.
+    maxInlineWaitMs: int(env.POLITENESS_MAX_INLINE_WAIT_MS, 3000),
     backoffBaseMs: int(env.QUEUE_BACKOFF_BASE_MS, 2000),
     backoffMaxMs: int(env.QUEUE_BACKOFF_MAX_MS, 60_000),
     // Only the exact string "true" turns SSRF protection off.

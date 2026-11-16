@@ -48,10 +48,22 @@ test("a budget of 3 says yes exactly 3 times, even when 10 workers race", async 
   assert.equal(answers.filter(Boolean).length, 3);
 });
 
+test("a brand-new budget is not under-counted when racers all try to create it", async () => {
+  // Regression: the losers of the "who inserts the counter" race used to
+  // answer "no" while budget was left (1 or 2 yes instead of 3). It only
+  // shows with truly parallel requests, so open pooled connections first.
+  for (let round = 0; round < 20; round++) {
+    await Promise.all(Array.from({ length: 10 }, () => mongoose.connection.db.admin().ping()));
+    const answers = await Promise.all(Array.from({ length: 10 }, () => take(`fresh${round}:pages`, 3)));
+    assert.equal(answers.filter(Boolean).length, 3, `round ${round}`);
+  }
+});
+
 test("canTransition follows the documented table", () => {
   assert.equal(canTransition("queued", "fetched"), true);
   assert.equal(canTransition("fetched", "parsed"), true);
-  assert.equal(canTransition("parsed", "queued"), false);
+  assert.equal(canTransition("parsed", "queued"), true, "re-crawl");
+  assert.equal(canTransition("skipped", "parsed"), false);
   assert.equal(canTransition("skipped", "fetched"), false);
 });
 
@@ -67,5 +79,16 @@ test("transition is conditional: a repeated delivery cannot apply it twice", asy
   assert.equal(await transition(CrawlUrl, url._id, "queued", "fetched", { title: "first" }), true);
   assert.equal(await transition(CrawlUrl, url._id, "queued", "fetched", { title: "second" }), false);
   assert.equal((await CrawlUrl.findById(url._id)).title, "first");
-  await assert.rejects(() => transition(CrawlUrl, url._id, "parsed", "queued"), /Illegal URL transition/);
+  await assert.rejects(() => transition(CrawlUrl, url._id, "skipped", "parsed"), /Illegal URL transition/);
+});
+
+test("peek tells how long until a host is free, without reserving the slot", async () => {
+  let t = Date.parse("2026-01-01T00:00:00Z");
+  const p = createMongoPoliteness({ minDelayMs: 1000, now: () => t });
+  assert.equal(await p.peek("new.com"), 0, "never used: free now");
+  await p.reserve("busy.com", 5000);
+  assert.equal(await p.peek("busy.com"), 5000);
+  assert.equal(await p.peek("busy.com"), 5000, "peeking twice changes nothing");
+  t += 2000;
+  assert.equal(await p.peek("busy.com"), 3000);
 });

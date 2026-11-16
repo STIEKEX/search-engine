@@ -127,10 +127,11 @@ test("politeness: requests to the same host start >= 1 s apart", async () => {
   const times = server.requests.map((r) => r.at); // robots.txt + 2 pages
   assert.equal(times.length, 3);
   for (let i = 1; i < times.length; i++) {
-    // Measured on the SERVER, so allow a few ms for the first request's TCP
-    // connection setup making it arrive later than its start. The exact
-    // ">= 1000 ms" rule is tested on the client side in politeness.test.js.
-    assert.ok(times[i] - times[i - 1] >= 980, `gap ${i} was ${times[i] - times[i - 1]} ms`);
+    // Measured on the SERVER, so allow for the first request's TCP connection
+    // setup and for CPU load when ~20 test files run in parallel (a 978 ms gap
+    // was seen once). The exact ">= 1000 ms" rule is tested on the client
+    // side in politeness.test.js; a real politeness bug would show ~0 ms here.
+    assert.ok(times[i] - times[i - 1] >= 950, `gap ${i} was ${times[i] - times[i - 1]} ms`);
   }
 });
 

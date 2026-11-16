@@ -19,6 +19,7 @@ const limitsSchema = new mongoose.Schema(
     maxPagesPerHost: { type: Number, required: true },
     excludePatterns: { type: [String], default: [] }, // regex sources, tested on normalized URLs
     sameHostOnly: { type: Boolean, required: true },
+    order: { type: String, enum: ["bfs", "inlinks"], default: "bfs" }, // which waiting URL is crawled next
   },
   { _id: false },
 );
@@ -31,6 +32,9 @@ const crawlJobSchema = new mongoose.Schema(
     completionReason: { type: String, default: null }, // frontier_empty | max_pages | job_timeout
     deadline: { type: Date, required: true }, // createdAt + jobTimeoutMs
     finishedAt: { type: Date, default: null },
+    // Set once, when maxPages is used up: from then on no new links are
+    // admitted, and the waiting fetch work was dropped in bulk.
+    budgetExhaustedAt: { type: Date, default: null },
     counters: {
       urlsAdmitted: { type: Number, default: 0 },
       duplicateUrls: { type: Number, default: 0 }, // links we already knew: URL-level dedup

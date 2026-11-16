@@ -44,5 +44,15 @@ export function createMongoPoliteness({ minDelayMs = 1000, model = HostSlot, now
     if (waitMs > 0) await sleep(waitMs);
   }
 
-  return { reserve, waitTurn, minDelayMs };
+  /**
+   * How long until `host` has a free slot, WITHOUT reserving it. Workers use
+   * this to decide "wait here briefly" vs "put the message back for later":
+   * reserving first and then giving up would waste the slot.
+   */
+  async function peek(host) {
+    const doc = await model.collection.findOne({ _id: host }, { projection: { nextAllowedAt: 1 } });
+    return doc?.nextAllowedAt ? Math.max(0, doc.nextAllowedAt.getTime() - now()) : 0;
+  }
+
+  return { reserve, waitTurn, peek, minDelayMs };
 }

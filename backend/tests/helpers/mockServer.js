@@ -27,6 +27,12 @@ const BUILTIN_ROUTES = {
   "/loop-a": (req, res) => redirect(res, "/loop-b"),
   "/loop-b": (req, res) => redirect(res, "/loop-a"),
   "/bad-redirect": (req, res) => redirect(res, "mailto:someone@example.com"),
+  // Supports conditional requests: ETag "v1" -> 304 when the client sends it back.
+  "/etag": (req, res) => {
+    if (req.headers["if-none-match"] === '"v1"') return res.writeHead(304, { etag: '"v1"' }).end();
+    res.writeHead(200, { "content-type": "text/html", etag: '"v1"', "last-modified": "Wed, 01 Jan 2026 00:00:00 GMT" });
+    res.end("<title>Etag page</title><p>stable</p>");
+  },
   "/status/404": (req, res) => html(res, "<h1>Not found</h1>", 404),
   "/status/500": (req, res) => html(res, "<h1>Server error</h1>", 500),
   // Sends headers, then never finishes the body.
@@ -78,7 +84,7 @@ export async function startMockServer(routes = {}) {
 
   const server = http.createServer((req, res) => {
     const pathname = decodeURIComponent(new URL(req.url, "http://localhost").pathname);
-    requests.push({ path: pathname, at: Date.now(), userAgent: req.headers["user-agent"] });
+    requests.push({ path: pathname, at: Date.now(), userAgent: req.headers["user-agent"], headers: req.headers });
     if (allRoutes[pathname]) return allRoutes[pathname](req, res);
     if (pathname.startsWith("/chain/")) return chainRoute(req, res, pathname);
     return serveFile(req, res, pathname);

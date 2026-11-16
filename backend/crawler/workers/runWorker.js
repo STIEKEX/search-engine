@@ -4,6 +4,7 @@
 // Node can do several fetches at once on a single thread.
 
 import CrawlJob from "../../server/models/CrawlJob.js";
+import { DEFERRED } from "./common.js";
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -42,7 +43,10 @@ export function startWorker({ queue, handle, concurrency = 2, pollMs = 500, work
           await sleep(pollMs);
           continue;
         }
-        await handle(msg);
+        // A message put back for later (politeness): pause before the next
+        // lease, otherwise this loop would keep picking up and putting back
+        // messages for the same busy site.
+        if ((await handle(msg)) === DEFERRED) await sleep(pollMs);
       } catch (err) {
         // A bug or a database hiccup. Never let one message kill the loop:
         // count it as a failed attempt so it is retried, then carry on.

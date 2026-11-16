@@ -43,6 +43,7 @@ function buildDeps(kind, config) {
   if (kind === "fetch") {
     deps.politeness = createMongoPoliteness({ minDelayMs: config.minDelayMs });
     deps.fetcher = createFetcher({ userAgent: config.userAgent, allowPrivateNetworks: config.allowPrivateNetworks });
+    deps.maxInlineWaitMs = config.maxInlineWaitMs;
     deps.robots = createRobots({ fetcher: deps.fetcher, politeness: deps.politeness, userAgent: config.userAgent });
   }
   return deps;

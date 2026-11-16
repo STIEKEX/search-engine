@@ -26,6 +26,7 @@ export const DEFAULT_FETCH_OPTIONS = {
   maxBytes: 2 * 1024 * 1024,
   allowedTypes: HTML_TYPES, // null = accept any content type (used for robots.txt)
   beforeRequest: null, // async (url, hop) => null to go on, or a reason string to stop
+  headers: {}, // extra request headers, e.g. If-Modified-Since for a re-crawl
   // SSRF: private/loopback/metadata addresses are refused unless this is true.
   // Only tests against a local mock server set it, and they set it explicitly.
   allowPrivateNetworks: false,
@@ -75,6 +76,13 @@ function newResult(url) {
     httpStatus: null,
     contentType: null,
     charset: null, // from Content-Type; kept so stored bytes can be decoded later
+    // Validators for a later re-crawl: send them back and an unchanged page
+    // answers "304 Not Modified" with an empty body.
+    etag: null,
+    lastModified: null,
+    notModified: false, // true when the server answered 304
+    // "Come back in N seconds", from a 429/503 Retry-After header (ms), else null.
+    retryAfterMs: null,
     sizeBytes: 0,
     body: null, // Buffer: the exact bytes, used for the content hash
     text: null, // body decoded to a string, used for parsing
@@ -141,7 +149,7 @@ function send(url, opts, agent) {
     bodyTimeout: opts.bodyTimeoutMs,
     // No accept-encoding header: undici does not decompress, so we ask for
     // plain bytes. That also makes maxBytes measure the real page size.
-    headers: { "user-agent": opts.userAgent, accept: opts.accept },
+    headers: { ...opts.headers, "user-agent": opts.userAgent, accept: opts.accept },
   });
 }
 
@@ -149,7 +157,18 @@ async function readResponse(result, res, opts) {
   const contentTypeHeader = firstHeader(res.headers["content-type"]) ?? "";
   result.contentType = contentTypeHeader.split(";")[0].trim().toLowerCase() || null;
   result.charset = charsetOf(contentTypeHeader);
+  result.etag = firstHeader(res.headers.etag) ?? null;
+  result.lastModified = firstHeader(res.headers["last-modified"]) ?? null;
 
+  // 304 only comes back when we sent If-None-Match / If-Modified-Since: the
+  // page has not changed since our copy, and the server sent no body.
+  if (res.statusCode === 304) {
+    await res.body.dump();
+    result.ok = true;
+    result.notModified = true;
+    return result;
+  }
+  result.retryAfterMs = parseRetryAfter(firstHeader(res.headers["retry-after"]));
   if (res.statusCode < 200 || res.statusCode >= 300) {
     await res.body.dump();
     return fail(result, "http_error", `HTTP ${res.statusCode}`);
@@ -206,6 +225,18 @@ function isTimeout(err) {
   // AbortSignal.timeout rejects with a "TimeoutError"; undici's own timers use
   // codes like UND_ERR_CONNECT_TIMEOUT / UND_ERR_HEADERS_TIMEOUT / UND_ERR_BODY_TIMEOUT.
   return err?.name === "TimeoutError" || /TIMEOUT/.test(err?.code ?? "");
+}
+
+/**
+ * Retry-After is either a number of seconds ("120") or an HTTP date.
+ * @returns {number|null} milliseconds to wait, or null if absent/invalid
+ */
+export function parseRetryAfter(value, now = Date.now()) {
+  if (value === undefined || value === null || value === "") return null;
+  const seconds = Number(value);
+  if (Number.isFinite(seconds)) return Math.max(0, seconds * 1000);
+  const date = Date.parse(value);
+  return Number.isNaN(date) ? null : Math.max(0, date - now);
 }
 
 function firstHeader(value) {

@@ -36,7 +36,7 @@ export class MongoQueue extends Queue {
     const ops = messages.map(({ jobId, urlId }) => ({
       updateOne: {
         filter: { queue: this.name, urlId },
-        update: { $setOnInsert: { queue: this.name, jobId, urlId, status: "ready", availableAt, attempts: 0, enqueuedAt: this.now() } },
+        update: { $setOnInsert: { queue: this.name, jobId, urlId, status: "ready", availableAt, attempts: 0, priority: 0, enqueuedAt: this.now() } },
         upsert: true,
       },
     }));
@@ -76,8 +76,19 @@ export class MongoQueue extends Queue {
         },
         $inc: { attempts: 1 },
       },
-      { sort: { availableAt: 1 }, returnDocument: "after", lean: true }, // oldest due work first
+      // Most important first; among equals, oldest first (so priority 0 everywhere = plain FIFO/BFS).
+      { sort: { priority: -1, availableAt: 1 }, returnDocument: "after", lean: true },
     );
+  }
+
+  /**
+   * Raise the priority of waiting messages (used for "most linked-to first").
+   * Only "ready" ones: a message already being worked on gains nothing.
+   */
+  async bumpPriority(urlIds, by = 1) {
+    if (urlIds.length === 0) return 0;
+    const result = await this.model.updateMany({ queue: this.name, urlId: { $in: urlIds }, status: "ready" }, { $inc: { priority: by } });
+    return result.modifiedCount;
   }
 
   async ack(msg) {
@@ -130,9 +141,13 @@ export class MongoQueue extends Queue {
     };
   }
 
-  /** Messages still to be worked on (ready or in flight). Dead ones do not count. */
-  countPending(jobId) {
-    return this.model.countDocuments({ queue: this.name, jobId, status: { $in: ["ready", "leased"] } });
+  /**
+   * Is any message of this job still to be worked on (ready or in flight)?
+   * Dead ones do not count. exists() stops at the first match; a count would
+   * read every waiting message (14,000 in the Wikipedia crawl) on every ack.
+   */
+  async hasPending(jobId) {
+    return (await this.model.exists({ queue: this.name, jobId, status: { $in: ["ready", "leased"] } })) !== null;
   }
 
   listDead(jobId) {
@@ -148,9 +163,12 @@ export class MongoQueue extends Queue {
     return result.modifiedCount;
   }
 
-  /** Drop work that has not started yet (used when a job is cancelled). */
-  async deleteReady(jobId) {
-    const result = await this.model.deleteMany({ queue: this.name, jobId, status: "ready" });
+  /**
+   * Drop work that has not started yet: all of a job's ready messages (job
+   * cancelled), or only those for the given URLs (page budget used up).
+   */
+  async deleteReady(jobId, { urlIds } = {}) {
+    const result = await this.model.deleteMany({ queue: this.name, jobId, status: "ready", ...(urlIds && { urlId: { $in: urlIds } }) });
     return result.deletedCount;
   }
 }

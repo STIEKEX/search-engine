@@ -57,7 +57,8 @@ export function createParseHandler(deps) {
       textRef: text.ref,
       title: parsed.title,
       canonicalUrl: parsed.canonicalUrl,
-      outlinks,
+      // No outlinks here: they are stored once, on the Content document
+      // (saveContent above), which is what PageRank reads.
       "parse.parsedAt": new Date(),
       "parse.lastError": null,
     });

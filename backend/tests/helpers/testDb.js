@@ -7,13 +7,16 @@ import mongoose from "mongoose";
 // Imported for their side effect: registering the models, so init() below
 // builds their indexes. Several unique indexes are part of correctness.
 import "../../server/models/Content.js";
+import "../../server/models/CorpusStats.js";
 import "../../server/models/Counter.js";
 import "../../server/models/CrawlJob.js";
 import "../../server/models/CrawlUrl.js";
 import "../../server/models/Domain.js";
 import "../../server/models/HostSlot.js";
+import "../../server/models/IndexedDocument.js";
 import "../../server/models/Page.js";
 import "../../server/models/QueueMessage.js";
+import "../../server/models/Term.js";
 
 export async function startTestDb() {
   const mongod = await MongoMemoryServer.create();

@@ -119,3 +119,14 @@ test("beforeRequest runs for every hop and can stop the fetch", async () => {
   assert.equal(res.errorCode, "blocked");
   assert.equal(res.error, "not allowed");
 });
+
+test("records ETag/Last-Modified, and a conditional request gets 304 with no body", async () => {
+  const first = await fetcher.fetchUrl(server.url("/etag"));
+  assert.equal(first.etag, '"v1"');
+  assert.equal(first.lastModified, "Wed, 01 Jan 2026 00:00:00 GMT");
+  const again = await fetcher.fetchUrl(server.url("/etag"), { headers: { "if-none-match": first.etag } });
+  assert.equal(again.ok, true);
+  assert.equal(again.notModified, true);
+  assert.equal(again.httpStatus, 304);
+  assert.equal(again.body, null);
+});

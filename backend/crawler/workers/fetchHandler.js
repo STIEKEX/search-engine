@@ -2,7 +2,8 @@
 //
 //   lease ─► job paused? release ─► job cancelled? skip
 //         ─► URL not "queued"? (repeat delivery) make sure parse is queued, ack
-//         ─► timeout / robots / budget checks ─► fetch (politeness per hop)
+//         ─► timeout / robots checks ─► site busy for long? put back for later
+//         ─► budget check ─► fetch (politeness per hop)
 //         ─► store raw HTML ─► content seen before? "duplicate" : "fetched" + parse msg
 //         ─► ack
 // Every write before the ack is safe to repeat, so a crash anywhere just means
@@ -11,10 +12,15 @@
 import Content from "../../server/models/Content.js";
 import CrawlUrl from "../../server/models/CrawlUrl.js";
 import { give, hostKey, pagesKey, take } from "../jobs/budgets.js";
-import { admitLinks, isExcluded, maybeCompleteJob } from "../jobs/jobService.js";
+import { admitLinks, isExcluded, maybeCompleteJob, onPageBudgetExhausted } from "../jobs/jobService.js";
 import { hostOf } from "../normalizeUrl.js";
 import { transition } from "../urlStates.js";
-import { finish, loadWork, PAUSE_RELEASE_DELAY_MS } from "./common.js";
+import { DEFERRED, finish, loadWork, PAUSE_RELEASE_DELAY_MS } from "./common.js";
+
+// Waiting a moment in place is cheaper than a release + a new lease (two
+// database round trips); beyond this, the worker's time is better spent on
+// another site.
+export const DEFAULT_MAX_INLINE_WAIT_MS = 3000;
 
 // A deliberate "no": record it, never retry.
 const SKIP_CODES = new Set(["blocked", "not_html", "ssrf_blocked"]);
@@ -27,7 +33,9 @@ export function isRetryable(res) {
 
 /** @param deps { fetchQueue, parseQueue, fetcher, robots, politeness, blobStore, log } */
 export function createFetchHandler(deps) {
-  const { fetchQueue, parseQueue, log = () => {} } = deps;
+  // maxInlineWaitMs: a politeness wait up to this long is done in place;
+  // longer ones put the message back in the queue (see defer()).
+  const { fetchQueue, parseQueue, log = () => {}, maxInlineWaitMs = DEFAULT_MAX_INLINE_WAIT_MS } = deps;
   const queues = { fetchQueue, parseQueue };
   const done = (msg, job) => finish(fetchQueue, msg, job, queues);
 
@@ -41,6 +49,15 @@ export function createFetchHandler(deps) {
     const stopReason = await preFetchCheck(job, url);
     if (stopReason) return skip(msg, job, url, stopReason);
 
+    // The site's next polite slot is far away: put the message back for then
+    // and let this worker do other work, instead of sleeping while holding it.
+    // Checked BEFORE the budget, so a postponed URL does not hold budget.
+    const waitMs = deps.politeness.peek ? await deps.politeness.peek(url.host) : 0;
+    if (waitMs > maxInlineWaitMs) return defer(msg, url, waitMs);
+
+    const budgetReason = await takeBudget(job, url);
+    if (budgetReason) return skip(msg, job, url, budgetReason);
+
     const res = await fetchPage(job, url);
     if (!res.ok) return handleFailure(msg, job, url, res);
     return handleFetched(msg, job, url, res);
@@ -50,14 +67,28 @@ export function createFetchHandler(deps) {
     if (Date.now() > job.deadline.getTime()) return "job_timeout";
     // robots BEFORE the budget, so disallowed URLs do not use up maxPages.
     const verdict = await deps.robots.check(url.normalizedUrl);
-    if (!verdict.allowed) return verdict.reason;
-    return takeBudget(job, url);
+    return verdict.allowed ? null : verdict.reason;
+  }
+
+  /**
+   * Release without counting an attempt, due when the slot opens. A little
+   * random jitter keeps all postponed messages of one site from becoming due
+   * in the same millisecond and stampeding the queue together.
+   */
+  async function defer(msg, url, waitMs) {
+    await fetchQueue.release(msg, waitMs + Math.floor(Math.random() * 250));
+    log(`[later] ${url.normalizedUrl} (site busy for ${waitMs} ms)`);
+    return DEFERRED;
   }
 
   /** Count this URL against maxPages and maxPagesPerHost, once per URL. */
   async function takeBudget(job, url) {
     if (url.fetch.budgeted) return null; // a retry: already counted
-    if (!(await take(pagesKey(job._id), job.limits.maxPages))) return "max_pages";
+    if (!(await take(pagesKey(job._id), job.limits.maxPages))) {
+      const dropped = await onPageBudgetExhausted(job._id, queues);
+      if (dropped > 0) log(`[budget] maxPages reached: ${dropped} waiting URLs dropped in bulk`);
+      return "max_pages";
+    }
     if (!(await take(hostKey(job._id, url.host), job.limits.maxPagesPerHost))) {
       await give(pagesKey(job._id)); // the first budget said yes; undo it
       return "max_pages_per_host";
@@ -72,8 +103,37 @@ export function createFetchHandler(deps) {
       maxRedirects: job.limits.maxRedirects,
       maxBytes: job.limits.maxResponseBytes,
       totalTimeoutMs: job.limits.requestTimeoutMs,
+      headers: conditionalHeaders(url),
       beforeRequest: (hopUrl, hop) => beforeEachRequest(job, url, hopUrl, hop),
     });
+  }
+
+  /**
+   * On a re-crawl, send back what the server told us last time. If the page
+   * has not changed, it answers "304 Not Modified" with an empty body: almost
+   * no bandwidth for the site or for us.
+   */
+  function conditionalHeaders(url) {
+    if (!url.fetch.previousState) return {}; // first crawl of this URL
+    return {
+      ...(url.fetch.etag && { "if-none-match": url.fetch.etag }),
+      ...(url.fetch.lastModified && { "if-modified-since": url.fetch.lastModified }),
+    };
+  }
+
+  /** Re-crawl found no change: back to the state it had, without parsing again. */
+  async function keepUnchanged(msg, job, url, res) {
+    await transition(CrawlUrl, url._id, "queued", url.fetch.previousState, {
+      "fetch.httpStatus": res.httpStatus,
+      "fetch.fetchedAt": res.finishedAt,
+      "fetch.previousState": null,
+      "fetch.lastError": null,
+      // A 304 may omit the validators: keep the ones we have.
+      ...(res.etag && { "fetch.etag": res.etag }),
+      ...(res.lastModified && { "fetch.lastModified": res.lastModified }),
+    });
+    log(`[same] ${url.normalizedUrl} (unchanged, HTTP ${res.httpStatus})`);
+    return done(msg, job);
   }
 
   /** Runs before every HTTP request, redirects included. null = go ahead. */
@@ -90,8 +150,11 @@ export function createFetchHandler(deps) {
   }
 
   async function handleFetched(msg, job, url, res) {
+    if (res.notModified) return keepUnchanged(msg, job, url, res);
     const raw = await deps.blobStore.putRawHtml(res.body); // content-addressed: safe to repeat
-    const fields = { ...fetchFields(res), contentHash: raw.hash, rawRef: raw.ref, "fetch.lastError": null };
+    // A server without 304 support can still send the very same bytes.
+    if (url.fetch.previousState && raw.hash === url.contentHash) return keepUnchanged(msg, job, url, res);
+    const fields = { ...fetchFields(res), contentHash: raw.hash, rawRef: raw.ref, "fetch.lastError": null, "fetch.previousState": null };
 
     const content = await Content.findById(raw.hash).lean();
     if (content) {
@@ -104,7 +167,6 @@ export function createFetchHandler(deps) {
         textRef: content.textRef,
         title: content.title,
         canonicalUrl: content.canonicalUrl,
-        outlinks: content.outlinks,
       });
       log(`[dup ] ${url.normalizedUrl} (same content as an earlier page)`);
       return done(msg, job);
@@ -159,5 +221,7 @@ function fetchFields(res) {
     "fetch.charset": res.charset,
     "fetch.sizeBytes": res.ok ? res.sizeBytes : null,
     "fetch.fetchedAt": res.finishedAt,
+    "fetch.etag": res.etag ?? null,
+    "fetch.lastModified": res.lastModified ?? null,
   };
 }

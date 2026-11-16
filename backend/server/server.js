@@ -1,6 +1,8 @@
 import dns from "node:dns";
 import app from "./app.js";
 import connectDb from "./config/db.js";
+import { spellCheckerFor } from "./lib/search.js";
+import { suggest } from "./lib/suggest.js";
 
 // Some networks (college/ISP DNS) refuse the SRV lookup that mongodb+srv://
 // URIs need, giving "querySrv ECONNREFUSED". Public DNS servers avoid it.
@@ -20,6 +22,17 @@ try {
 } catch (err) {
   console.error("Could not connect to MongoDB:", err.message);
   process.exit(1);
+}
+
+// Warm up: load the index cache and build the autocomplete trie now (about
+// 1 s on Atlas), so the first visitor doesn't pay for it. A missing index
+// is fine here: the server still starts, and search explains what to run.
+try {
+  const { suggestions } = await suggest("a", 1, app.locals);
+  await spellCheckerFor(await app.locals.indexCache.get()); // the vocabulary for typo correction
+  console.log(`Index loaded, autocomplete and spell correction ready${suggestions.length ? "" : " (no titles yet)"}`);
+} catch (err) {
+  console.log(`Index not loaded: ${err.message}`);
 }
 
 // Express 5 passes listen errors (e.g. EADDRINUSE: port already taken) to this callback.

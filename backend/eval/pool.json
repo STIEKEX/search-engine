@@ -1,0 +1,2345 @@
+[
+  {
+    "id": 1,
+    "query": "gothic cathedral",
+    "intent": "Gothic cathedrals and Gothic church architecture",
+    "pages": [
+      {
+        "url": "https://simple.wikipedia.org/wiki/Architecture",
+        "title": "Architecture - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Church_(building)",
+        "title": "Church (building) - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Cologne_Cathedral",
+        "title": "Cologne Cathedral - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Ecuador",
+        "title": "Ecuador - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Perpendicular_architecture",
+        "title": "English Gothic architecture - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Early_English_architecture",
+        "title": "English Gothic architecture - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Gothic_architecture",
+        "title": "Gothic cathedrals - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Gothic_cathedrals",
+        "title": "Gothic cathedrals - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Gothic_Revival_architecture",
+        "title": "Gothic Revival architecture - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Paris",
+        "title": "Paris - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Quito",
+        "title": "Quito - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Salisbury_Cathedral",
+        "title": "Salisbury Cathedral - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Vault",
+        "title": "Vault (architecture) - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Vienna",
+        "title": "Vienna - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Westminster_Abbey",
+        "title": "Westminster Abbey - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Main_Page",
+        "title": "Wikipedia"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "query": "civil rights movement",
+    "intent": "The US civil rights movement: its events, laws, groups and leaders",
+    "pages": [
+      {
+        "url": "https://simple.wikipedia.org/wiki/Africa",
+        "title": "Africa - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/African_American",
+        "title": "African Americans - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/African-American_history",
+        "title": "African Americans - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/American_English",
+        "title": "American English - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Christianity",
+        "title": "Christianity - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/City",
+        "title": "City - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Civil_disobedience",
+        "title": "Civil disobedience - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Civil_Rights_Act_of_1964",
+        "title": "Civil Rights Act of 1964 - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Civil_Rights_Act_of_1968",
+        "title": "Civil Rights Act of 1968 - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Civil_rights_movement",
+        "title": "Civil Rights Movement - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/American_Civil_Rights_Movement",
+        "title": "Civil Rights Movement - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/American_civil_rights_movement",
+        "title": "Civil Rights Movement - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Civil_Rights_Movement",
+        "title": "Civil Rights Movement - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Earth",
+        "title": "Earth - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Human_rights",
+        "title": "Human rights - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/India",
+        "title": "India - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Islam",
+        "title": "Islam - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Italy",
+        "title": "Italy - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Jesse_Jackson",
+        "title": "Jesse Jackson - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Jim_Crow_laws",
+        "title": "Jim Crow laws - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Malcolm_X",
+        "title": "Malcolm X - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Martin_Luther_King_Jr.",
+        "title": "Martin Luther King Jr. - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Military",
+        "title": "Military - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Ralph_Abernathy",
+        "title": "Ralph Abernathy - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Reconstruction_era",
+        "title": "Reconstruction era - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Rosa_Parks",
+        "title": "Rosa Parks - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Science",
+        "title": "Science - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/SCLC",
+        "title": "Southern Christian Leadership Conference - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/SNCC",
+        "title": "Student Nonviolent Coordinating Committee - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/United_States",
+        "title": "United States - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/World_War_II",
+        "title": "World War II - Simple English Wikipedia, the free encyclopedia"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "query": "martin luther king",
+    "intent": "Martin Luther King Jr., his campaigns and his assassination",
+    "pages": [
+      {
+        "url": "https://simple.wikipedia.org/wiki/African_American",
+        "title": "African Americans - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/American_English",
+        "title": "American English - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Assassination_of_Martin_Luther_King_Jr.",
+        "title": "Assassination of Martin Luther King Jr. - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Barack_Obama",
+        "title": "Barack Obama - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Christianity",
+        "title": "Christianity - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Christmas",
+        "title": "Christmas - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Civil_disobedience",
+        "title": "Civil disobedience - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Civil_Rights_Act_of_1964",
+        "title": "Civil Rights Act of 1964 - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Civil_Rights_Movement",
+        "title": "Civil Rights Movement - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Civil_rights_movement",
+        "title": "Civil Rights Movement - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/American_Civil_Rights_Movement",
+        "title": "Civil Rights Movement - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/American_civil_rights_movement",
+        "title": "Civil Rights Movement - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/History_of_Christianity",
+        "title": "History of Christianity - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Jesse_Jackson",
+        "title": "Jesse Jackson - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/March_on_Washington_for_Jobs_and_Freedom",
+        "title": "March on Washington for Jobs and Freedom - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/March_on_Washington",
+        "title": "March on Washington for Jobs and Freedom - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Martin_Luther",
+        "title": "Martin Luther - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Martin_Luther_King_Jr.",
+        "title": "Martin Luther King Jr. - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Ottoman_Empire",
+        "title": "Ottoman Empire - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Peace",
+        "title": "Peace - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Protestant_Reformation",
+        "title": "Protestant Reformation - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Reconstruction_era",
+        "title": "Reconstruction era - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Renaissance",
+        "title": "Renaissance - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/United_States",
+        "title": "United States - Simple English Wikipedia, the free encyclopedia"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "query": "iranian presidential election",
+    "intent": "Presidential elections in Iran and Iranian presidents",
+    "pages": [
+      {
+        "url": "https://simple.wikipedia.org/wiki/2009_Iranian_presidential_election_protests",
+        "title": "2009 Iranian presidential election protests - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/2024_Iranian_presidential_election",
+        "title": "2024 Iranian presidential election - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Abraham_Accords",
+        "title": "Abraham Accords - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Assassination_of_Qasem_Soleimani",
+        "title": "Assassination of Qasem Soleimani - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Bernie_Sanders",
+        "title": "Bernie Sanders - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Ebrahim_Raisi",
+        "title": "Ebrahim Raisi - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Hassan_Rouhani",
+        "title": "Hassan Rouhani - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Iran",
+        "title": "Iran - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Mahmoud_Ahmadinejad",
+        "title": "Mahmoud Ahmadinejad - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Masoud_Pezeshkian",
+        "title": "Masoud Pezeshkian - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Mir-Hossein_Mousavi",
+        "title": "Mir-Hossein Mousavi - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Saeed_Jalili",
+        "title": "Saeed Jalili - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/T:TDYK",
+        "title": "Template talk:Did you know - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Trump_travel_ban",
+        "title": "Trump travel ban - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Ukraine",
+        "title": "Ukraine - Simple English Wikipedia, the free encyclopedia"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "query": "supreme leader of iran",
+    "intent": "The Supreme Leader office and the people who held it",
+    "pages": [
+      {
+        "url": "https://simple.wikipedia.org/wiki/2024_Varzaqan_helicopter_crash",
+        "title": "2024 Varzaqan helicopter crash - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Ali_Khamenei",
+        "title": "Ali Khamenei - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Alireza_Arafi",
+        "title": "Alireza Arafi - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Assassination_of_Ali_Khamenei",
+        "title": "Assassination of Ali Khamenei - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Donald_Trump",
+        "title": "Donald Trump - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Ebrahim_Raisi",
+        "title": "Ebrahim Raisi - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Gholam-Hossein_Mohseni-Eje'i",
+        "title": "Gholam-Hossein Mohseni-Eje'i - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Hassan_Rouhani",
+        "title": "Hassan Rouhani - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Head_of_state",
+        "title": "Head of state - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/India",
+        "title": "India - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Interim_Leadership_Council",
+        "title": "Interim Leadership Council - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Islamic_Republic_of_Iran",
+        "title": "Iran - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Iran",
+        "title": "Iran - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Israel",
+        "title": "Israel - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Law",
+        "title": "Law - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Masoud_Pezeshkian",
+        "title": "Masoud Pezeshkian - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Mojtaba_Khamenei",
+        "title": "Mojtaba Khamenei - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/North_Korea",
+        "title": "North Korea - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Pakistan",
+        "title": "Pakistan - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/President_of_Iran",
+        "title": "President of Iran - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Soviet_Union",
+        "title": "Soviet Union - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Supreme_Leader_of_Iran",
+        "title": "Supreme Leader of Iran - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Twelve-Day_War",
+        "title": "Twelve-Day War - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/United_States",
+        "title": "United States - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Water",
+        "title": "Water - Simple English Wikipedia, the free encyclopedia"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "query": "trump impeachment",
+    "intent": "The impeachments of Donald Trump",
+    "pages": [
+      {
+        "url": "https://simple.wikipedia.org/wiki/2020_United_States_presidential_election",
+        "title": "2020 United States presidential election - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/2020%E2%80%9321_United_States_election_protests",
+        "title": "2020–21 United States election protests - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/2024_United_States_presidential_election",
+        "title": "2024 United States presidential election - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Attempted_assassination_of_Donald_Trump_in_Florida",
+        "title": "Attempted assassination of Donald Trump in Florida - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Attempted_assassination_of_Donald_Trump_in_Pennsylvania",
+        "title": "Attempted assassination of Donald Trump in Pennsylvania - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Stop_the_Steal",
+        "title": "Attempts to overturn the 2020 United States presidential election - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Attempts_to_overturn_the_2020_United_States_presidential_election",
+        "title": "Attempts to overturn the 2020 United States presidential election - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Barack_Obama",
+        "title": "Barack Obama - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Donald_Trump",
+        "title": "Donald Trump - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Donald_Trump_2020_presidential_campaign",
+        "title": "Donald Trump 2020 presidential campaign - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Donald_Trump_2024_presidential_campaign",
+        "title": "Donald Trump 2024 presidential campaign - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/First_impeachment_of_Donald_Trump",
+        "title": "First impeachment of Donald Trump - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/First_impeachment_trial_of_Donald_Trump",
+        "title": "First impeachment trial of Donald Trump - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/First_presidency_of_Donald_Trump",
+        "title": "First presidency of Donald Trump - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Impeachment",
+        "title": "Impeachment - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Joe_Biden",
+        "title": "Joe Biden - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Kamala_Harris",
+        "title": "Kamala Harris - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/President_of_the_United_States",
+        "title": "President of the United States - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Protests_against_Donald_Trump",
+        "title": "Protests against Donald Trump - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Second_impeachment_of_Donald_Trump",
+        "title": "Second impeachment of Donald Trump - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/T:TDYK",
+        "title": "Template talk:Did you know - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/The_Atlantic",
+        "title": "The Atlantic - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Trump%E2%80%93Ukraine_scandal",
+        "title": "Trump–Ukraine scandal - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/United_States",
+        "title": "United States - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Vice_President_of_the_United_States",
+        "title": "Vice President of the United States - Simple English Wikipedia, the free encyclopedia"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "query": "2020 presidential election",
+    "intent": "The 2020 US presidential election and disputes about it",
+    "pages": [
+      {
+        "url": "https://simple.wikipedia.org/wiki/2016_Republican_National_Convention",
+        "title": "2016 Republican National Convention - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/2016_United_States_presidential_election",
+        "title": "2016 United States presidential election - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/2020_Democratic_Party_presidential_primaries",
+        "title": "2020 Democratic Party presidential primaries - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/2020_Republican_Party_presidential_primaries",
+        "title": "2020 Republican Party presidential primaries - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/2020_United_States_presidential_election",
+        "title": "2020 United States presidential election - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/2024_Republican_Party_presidential_primaries",
+        "title": "2024 Republican Party presidential primaries - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/2024_United_States_presidential_debates",
+        "title": "2024 United States presidential debates - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/2024_United_States_presidential_election",
+        "title": "2024 United States presidential election - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Attempted_assassination_of_Donald_Trump_in_Pennsylvania",
+        "title": "Attempted assassination of Donald Trump in Pennsylvania - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Stop_the_Steal",
+        "title": "Attempts to overturn the 2020 United States presidential election - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Attempts_to_overturn_the_2020_United_States_presidential_election",
+        "title": "Attempts to overturn the 2020 United States presidential election - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Azerbaijan",
+        "title": "Azerbaijan - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Barack_Obama",
+        "title": "Barack Obama - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Bernie_Sanders",
+        "title": "Bernie Sanders - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Brazil",
+        "title": "Brazil - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Donald_Trump",
+        "title": "Donald Trump - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Donald_Trump_2024_presidential_campaign",
+        "title": "Donald Trump 2024 presidential campaign - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Egypt",
+        "title": "Egypt - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/First_inauguration_of_Donald_Trump",
+        "title": "First inauguration of Donald Trump - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/First_presidency_of_Donald_Trump",
+        "title": "First presidency of Donald Trump - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Iran",
+        "title": "Iran - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Kamala_Harris",
+        "title": "Kamala Harris - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Lithuania",
+        "title": "Lithuania - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Make_America_Great_Again",
+        "title": "Make America Great Again - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Poland",
+        "title": "Poland - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/President_of_Iran",
+        "title": "President of Iran - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/President_of_the_United_States",
+        "title": "President of the United States - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Protests_against_Donald_Trump",
+        "title": "Protests against Donald Trump - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Ronald_Reagan",
+        "title": "Ronald Reagan - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Russia",
+        "title": "Russia - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Texas_v._Pennsylvania",
+        "title": "Texas v. Pennsylvania - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Trump%E2%80%93Raffensperger_phone_call",
+        "title": "Trump–Raffensperger phone call - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Turkey",
+        "title": "Turkey - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Ukraine",
+        "title": "Ukraine - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/United_States",
+        "title": "United States - Simple English Wikipedia, the free encyclopedia"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "query": "ancient greek philosophy",
+    "intent": "Philosophy in ancient Greece",
+    "pages": [
+      {
+        "url": "https://simple.wikipedia.org/wiki/Ancient_Greeks",
+        "title": "Ancient Greece - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Ancient_Greece",
+        "title": "Ancient Greece - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Ancient_Greek_philosophy",
+        "title": "Ancient Greek philosophy - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Aristotle",
+        "title": "Aristotle - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Atheism",
+        "title": "Atheism - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Classical_antiquity",
+        "title": "Classical antiquity - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Epistemology",
+        "title": "Epistemology - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Europe",
+        "title": "Europe - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Greece",
+        "title": "Greece - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Italy",
+        "title": "Italy - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Law",
+        "title": "Law - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Materialism",
+        "title": "Materialism - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Mathematics",
+        "title": "Mathematics - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Natural_sciences",
+        "title": "Natural science - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Philosophy",
+        "title": "Philosophy - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Physics",
+        "title": "Physics - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Plato",
+        "title": "Plato - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Politics",
+        "title": "Politics - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Religion",
+        "title": "Religion - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Russia",
+        "title": "Russia - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Science",
+        "title": "Science - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Scientific",
+        "title": "Science - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Theatre",
+        "title": "Theatre - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Water",
+        "title": "Water - Simple English Wikipedia, the free encyclopedia"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "query": "roman empire",
+    "intent": "The Roman Empire and its history",
+    "pages": [
+      {
+        "url": "https://simple.wikipedia.org/wiki/Ancient_Rome",
+        "title": "Ancient Rome - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Austria",
+        "title": "Austria - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Byzantine_Empire",
+        "title": "Byzantine Empire - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/China",
+        "title": "China - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Christianity",
+        "title": "Christianity - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Classical_antiquity",
+        "title": "Classical antiquity - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Constantine_I_(Rome)",
+        "title": "Constantine the Great - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Constantine_the_Great",
+        "title": "Constantine the Great - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Empire",
+        "title": "Empire - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Europe",
+        "title": "Europe - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/France",
+        "title": "France - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Germany",
+        "title": "Germany - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Government",
+        "title": "Government - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/History",
+        "title": "History - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Holy_Roman_Empire",
+        "title": "Holy Roman Empire - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Italy",
+        "title": "Italy - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Japan",
+        "title": "Japan - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Latin",
+        "title": "Latin - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Roman_emperor",
+        "title": "List of Roman emperors - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Middle_Ages",
+        "title": "Middle Ages - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Roman_Empire",
+        "title": "Roman Empire - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Russia",
+        "title": "Russia - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Science",
+        "title": "Science - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Spain",
+        "title": "Spain - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Thirty_Years'_War",
+        "title": "Thirty Years' War - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/United_Kingdom",
+        "title": "United Kingdom - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Western_Roman_Empire",
+        "title": "Western Roman Empire - Simple English Wikipedia, the free encyclopedia"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "query": "medieval castle",
+    "intent": "Castles of the Middle Ages and their parts",
+    "pages": [
+      {
+        "url": "https://simple.wikipedia.org/wiki/Castle",
+        "title": "Castle - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Computer",
+        "title": "Computer - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Ditch",
+        "title": "Ditch - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Dungeon",
+        "title": "Dungeon - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Gothic_cathedrals",
+        "title": "Gothic cathedrals - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Gothic_architecture",
+        "title": "Gothic cathedrals - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Hero",
+        "title": "Hero - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/House",
+        "title": "House - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Hungary",
+        "title": "Hungary - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Leonardo_da_Vinci",
+        "title": "Leonardo da Vinci - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Manor_house",
+        "title": "Manor house - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Martin_Luther",
+        "title": "Martin Luther - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Moat",
+        "title": "Moat - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Nuremberg",
+        "title": "Nuremberg - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Scotland",
+        "title": "Scotland - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Stephen_Turnbull",
+        "title": "Stephen Turnbull - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Thomas_Aquinas",
+        "title": "Thomas Aquinas - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/William_the_Conqueror",
+        "title": "William the Conqueror - Simple English Wikipedia, the free encyclopedia"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "query": "world war",
+    "intent": "World War I and World War II",
+    "pages": [
+      {
+        "url": "https://simple.wikipedia.org/wiki/British_Empire",
+        "title": "British Empire - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/China",
+        "title": "China - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Cold_War",
+        "title": "Cold War - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Denmark",
+        "title": "Denmark - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Europe",
+        "title": "Europe - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/France",
+        "title": "France - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Germany",
+        "title": "Germany - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/History",
+        "title": "History - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/History_of_Europe",
+        "title": "History of Europe - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/India",
+        "title": "India - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Italy",
+        "title": "Italy - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Japan",
+        "title": "Japan - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/North_Korea",
+        "title": "North Korea - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Treaty_of_Versailles",
+        "title": "Treaty of Versailles - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/United_Kingdom",
+        "title": "United Kingdom - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/United_Nations",
+        "title": "United Nations - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/United_States",
+        "title": "United States - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Weapon",
+        "title": "Weapon - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/World_War_1",
+        "title": "World War I - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/World_War_I",
+        "title": "World War I - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/World_War_2",
+        "title": "World War II - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/World_War_II",
+        "title": "World War II - Simple English Wikipedia, the free encyclopedia"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "query": "slavery in the united states",
+    "intent": "Slavery in the US, abolition and its laws",
+    "pages": [
+      {
+        "url": "https://simple.wikipedia.org/wiki/Abolitionism_in_the_United_States",
+        "title": "Abolitionism - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Abraham_Lincoln",
+        "title": "Abraham Lincoln - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Africa",
+        "title": "Africa - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/African_Americans",
+        "title": "African Americans - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/African_American",
+        "title": "African Americans - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/African-American_history",
+        "title": "African Americans - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/African-American_culture",
+        "title": "African-American culture - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/American_Civil_War",
+        "title": "American Civil War - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Atlantic_slave_trade",
+        "title": "Atlantic slave trade - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Brazil",
+        "title": "Brazil - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/British_Empire",
+        "title": "British Empire - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Dred_Scott_v._Sandford",
+        "title": "Dred Scott v. Sandford - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Exodusters",
+        "title": "Exodusters - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/History",
+        "title": "History - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Human_rights",
+        "title": "Human rights - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Islam",
+        "title": "Islam - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Judaism",
+        "title": "Judaism - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/New_York_City",
+        "title": "New York City - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Reconstruction_era",
+        "title": "Reconstruction era - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Slavery",
+        "title": "Slavery - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Slaves",
+        "title": "Slavery - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Slavery_in_the_United_States",
+        "title": "Slavery in the United States - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Thirteenth_Amendment_to_the_United_States_Constitution",
+        "title": "Thirteenth Amendment to the United States Constitution - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/United_States",
+        "title": "United States - Simple English Wikipedia, the free encyclopedia"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "query": "farming crops",
+    "intent": "Growing crops: agriculture and farming methods",
+    "pages": [
+      {
+        "url": "https://simple.wikipedia.org/wiki/Agriculture",
+        "title": "Agriculture - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Ancient_Egypt",
+        "title": "Ancient Egypt - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Ancient_Egyptian_agriculture",
+        "title": "Ancient Egyptian agriculture - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Australia",
+        "title": "Australia - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Crop",
+        "title": "Crop - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Earth",
+        "title": "Earth - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Farm",
+        "title": "Farm - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Farmer",
+        "title": "Farmer - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Farming",
+        "title": "Farming - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Food",
+        "title": "Food - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Gardening",
+        "title": "Gardening - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Green_Revolution",
+        "title": "Green Revolution - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Human",
+        "title": "Human - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Hydroponics",
+        "title": "Hydroponics - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Intensive_farming",
+        "title": "Intensive farming - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Israel",
+        "title": "Israel - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Monoculture",
+        "title": "Monoculture - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Neolithic_Revolution",
+        "title": "Neolithic revolution - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Organic_farming",
+        "title": "Organic farms - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Pasture",
+        "title": "Pasture - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/River",
+        "title": "River - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Science",
+        "title": "Science - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Turkey",
+        "title": "Turkey - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Water",
+        "title": "Water - Simple English Wikipedia, the free encyclopedia"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "query": "sheep wool",
+    "intent": "Sheep and wool",
+    "pages": [
+      {
+        "url": "https://simple.wikipedia.org/wiki/Animal_husbandry",
+        "title": "Animal husbandry - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Australia",
+        "title": "Australia - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Sheep",
+        "title": "Domestic sheep - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Domestic_sheep",
+        "title": "Domestic sheep - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Farmer",
+        "title": "Farmer - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Hair",
+        "title": "Hair - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Livestock",
+        "title": "Livestock - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/River",
+        "title": "River - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Textile",
+        "title": "Textile - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Cloth",
+        "title": "Textile - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Wool",
+        "title": "Wool - Simple English Wikipedia, the free encyclopedia"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "query": "snooker championship",
+    "intent": "Snooker tournaments and players",
+    "pages": [
+      {
+        "url": "https://simple.wikipedia.org/wiki/Carom_billiards",
+        "title": "Carom billiards - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Masters_(snooker)",
+        "title": "Masters (snooker) - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Ray_Reardon",
+        "title": "Ray Reardon - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Ronnie_O'Sullivan",
+        "title": "Ronnie O'Sullivan - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Snooker",
+        "title": "Snooker - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Stephen_Hendry",
+        "title": "Stephen Hendry - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Steve_Davis",
+        "title": "Steve Davis - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/World_Snooker_Championship",
+        "title": "World Snooker Championship - Simple English Wikipedia, the free encyclopedia"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "query": "german university",
+    "intent": "Universities in Germany",
+    "pages": [
+      {
+        "url": "https://simple.wikipedia.org/wiki/Albert_Einstein",
+        "title": "Albert Einstein - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Belgium",
+        "title": "Belgium - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Berlin",
+        "title": "Berlin - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Demonym",
+        "title": "Demonym - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Denmark",
+        "title": "Denmark - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/English_language",
+        "title": "English language - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Free_University_of_Berlin",
+        "title": "Free University of Berlin - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Germany",
+        "title": "Germany - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Gottfried_Wilhelm_Leibniz",
+        "title": "Gottfried Leibniz - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Hanover",
+        "title": "Hanover - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Heidelberg_University",
+        "title": "Heidelberg University - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Humboldt_University_of_Berlin",
+        "title": "Humboldt University of Berlin - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Immanuel_Kant",
+        "title": "Immanuel Kant - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Japan",
+        "title": "Japan - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Latin",
+        "title": "Latin - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Mainz",
+        "title": "Mainz - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Max_Weber",
+        "title": "Max Weber - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Nicolaus_Copernicus",
+        "title": "Nicolaus Copernicus - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Racial_segregation",
+        "title": "Racial segregation - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Russia",
+        "title": "Russia - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Science",
+        "title": "Science - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Spain",
+        "title": "Spain - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Switzerland",
+        "title": "Switzerland - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/United_Kingdom",
+        "title": "United Kingdom - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/United_States",
+        "title": "United States - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/University_of_Freiburg",
+        "title": "University of Freiburg - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/University_of_T%C3%BCbingen",
+        "title": "University of Tübingen - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Main_Page",
+        "title": "Wikipedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/World_War_II",
+        "title": "World War II - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/World_War_2",
+        "title": "World War II - Simple English Wikipedia, the free encyclopedia"
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "query": "ecuador province",
+    "intent": "The provinces of Ecuador",
+    "pages": [
+      {
+        "url": "https://simple.wikipedia.org/wiki/Argentina",
+        "title": "Argentina - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Azuay_Province",
+        "title": "Azuay Province - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Bol%C3%ADvar_Province,_Ecuador",
+        "title": "Bolívar Province (Ecuador) - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Ca%C3%B1ar_Province,_Ecuador",
+        "title": "Cañar Province - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Carchi",
+        "title": "Carchi Province - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Chimborazo_(province)",
+        "title": "Chimborazo Province - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Cotopaxi_Province",
+        "title": "Cotopaxi Province - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Eastern_Time_Zone",
+        "title": "Eastern Time Zone - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Eastern_Daylight_Time",
+        "title": "Eastern Time Zone - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Ecuador",
+        "title": "Ecuador - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Guayaquil",
+        "title": "Guayaquil - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Guayas_Province",
+        "title": "Guayas Province - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Ibarra,_Ecuador",
+        "title": "Ibarra, Ecuador - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Imbabura_Province",
+        "title": "Imbabura Province - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Latin_America",
+        "title": "Latin America - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Manab%C3%AD_Province",
+        "title": "Manabí Province - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Morona_Santiago",
+        "title": "Morona-Santiago Province - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Napo_(province)",
+        "title": "Napo Province - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Official_residence",
+        "title": "Official residence - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Orellana_Province",
+        "title": "Orellana Province - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Pastaza_Province",
+        "title": "Pastaza Province - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Quito",
+        "title": "Quito - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Riobamba",
+        "title": "Riobamba - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Spanish_language",
+        "title": "Spanish language - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Unitary_state",
+        "title": "Unitary state - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/UTC%E2%88%9205:00",
+        "title": "UTC−05:00 - Simple English Wikipedia, the free encyclopedia"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "query": "greek mythology monster",
+    "intent": "Monsters and creatures of Greek mythology",
+    "pages": [
+      {
+        "url": "https://simple.wikipedia.org/wiki/Anubis",
+        "title": "Anubis - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Barbarian",
+        "title": "Barbarian - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Cerberus",
+        "title": "Cerberus - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Chimera_(mythology)",
+        "title": "Chimera (mythology) - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Dragon",
+        "title": "Dragon - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Erymanthian_Boar",
+        "title": "Erymanthian Boar - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Greek_mythology",
+        "title": "Greek mythology - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Hero",
+        "title": "Hero - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Hippocamp",
+        "title": "Hippocamp - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Hydra",
+        "title": "Hydra - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Minotaur",
+        "title": "Minotaur - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Nemean_lion",
+        "title": "Nemean lion - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Pegasus",
+        "title": "Pegasus - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Unicorn",
+        "title": "Unicorn - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Water",
+        "title": "Water - Simple English Wikipedia, the free encyclopedia"
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "query": "protestant reformation",
+    "intent": "The Protestant Reformation and its leaders",
+    "pages": [
+      {
+        "url": "https://simple.wikipedia.org/wiki/2020%E2%80%9321_United_States_election_protests",
+        "title": "2020–21 United States election protests - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Anglicanism",
+        "title": "Anglicanism - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Bible",
+        "title": "Bible - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Catholic_Church",
+        "title": "Catholic Church - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Christian_Church",
+        "title": "Christian Church - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Christian_denomination",
+        "title": "Christian denomination - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Christianity",
+        "title": "Christianity - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Donald_Trump",
+        "title": "Donald Trump - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Eastern_Orthodox_Church",
+        "title": "Eastern Orthodox Church - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/England",
+        "title": "England - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/France",
+        "title": "France - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/George_Floyd_protests",
+        "title": "George Floyd protests - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Germany",
+        "title": "Germany - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Greece",
+        "title": "Greece - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/History_of_Christianity",
+        "title": "History of Christianity - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/India",
+        "title": "India - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Lutheranism",
+        "title": "Lutheranism - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Martin_Luther",
+        "title": "Martin Luther - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Middle_Ages",
+        "title": "Middle Ages - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Ninety-Five_Theses",
+        "title": "Ninety-Five Theses - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Reformation",
+        "title": "Protestant Reformation - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Protestant_Reformation",
+        "title": "Protestant Reformation - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Spain",
+        "title": "Spain - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/United_States",
+        "title": "United States - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Western_Christianity",
+        "title": "Western Christianity - Simple English Wikipedia, the free encyclopedia"
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "query": "french revolution",
+    "intent": "The French Revolution",
+    "pages": [
+      {
+        "url": "https://simple.wikipedia.org/wiki/Africa",
+        "title": "Africa - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Age_of_Enlightenment",
+        "title": "Age of Enlightenment - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Agriculture",
+        "title": "Agriculture - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/American_Revolution",
+        "title": "American Revolutionary War - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Belgium",
+        "title": "Belgium - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Denis_Diderot",
+        "title": "Denis Diderot - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Egypt",
+        "title": "Egypt - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Europe",
+        "title": "Europe - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/France",
+        "title": "France - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/French_Revolution",
+        "title": "French Revolution - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Germany",
+        "title": "Germany - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/History_of_Europe",
+        "title": "History of Europe - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Jean-Jacques_Rousseau",
+        "title": "Jean-Jacques Rousseau - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Luxembourg",
+        "title": "Luxembourg - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Napoleon_Bonaparte",
+        "title": "Napoleon - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Physics",
+        "title": "Physics - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Science",
+        "title": "Science - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/United_States",
+        "title": "United States - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Victor_Hugo",
+        "title": "Victor Hugo - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Voltaire",
+        "title": "Voltaire - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Water",
+        "title": "Water - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/World_War_I",
+        "title": "World War I - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/World_War_1",
+        "title": "World War I - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/World_War_II",
+        "title": "World War II - Simple English Wikipedia, the free encyclopedia"
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "query": "free software license",
+    "intent": "Free software and open licenses",
+    "pages": [
+      {
+        "url": "https://simple.wikipedia.org/wiki/BSD_license",
+        "title": "BSD licence - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Copyleft",
+        "title": "Copyleft - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Copyright",
+        "title": "Copyright - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Creative_Commons_licenses",
+        "title": "Creative Commons licenses - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Debian_Free_Software_Guidelines",
+        "title": "Debian Free Software Guidelines - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Engineering",
+        "title": "Engineering - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/English_Wikipedia",
+        "title": "English Wikipedia - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Free_software",
+        "title": "Free software - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Free_Software_Foundation",
+        "title": "Free Software Foundation - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/GNU_Free_Documentation_License",
+        "title": "GNU Free Documentation License - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/License",
+        "title": "License - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Open_license",
+        "title": "Open license - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Main_Page",
+        "title": "Wikipedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Wikipedia",
+        "title": "Wikipedia - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/MOS:BROKENSECTIONLINKS",
+        "title": "Wikipedia:Manual of Style - Simple English Wikipedia, the free encyclopedia"
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "query": "english verb tense",
+    "intent": "Verb tenses in English grammar",
+    "pages": [
+      {
+        "url": "https://simple.wikipedia.org/wiki/Auxiliary_verb",
+        "title": "Auxiliary verb - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Conjugation",
+        "title": "Conjugation - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Future_tense",
+        "title": "Future tense - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Grammar",
+        "title": "Grammar - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Grammatical_relations",
+        "title": "Grammar - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Italian_language",
+        "title": "Italian language - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Latin",
+        "title": "Latin - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Linguistics",
+        "title": "Linguistics - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Object_(grammar)",
+        "title": "Object (grammar) - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Past_tense",
+        "title": "Past tense - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Present_tense",
+        "title": "Present tense - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Syntax",
+        "title": "Syntax - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Grammatical_tense",
+        "title": "Tense (grammar) - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Tense_(grammar)",
+        "title": "Tense (grammar) - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Truth",
+        "title": "Truth - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Verb",
+        "title": "Verb - Simple English Wikipedia, the free encyclopedia"
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "query": "bubonic plague",
+    "intent": "Bubonic plague and the Black Death",
+    "pages": [
+      {
+        "url": "https://simple.wikipedia.org/wiki/Black_Death",
+        "title": "Black Death - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Plague",
+        "title": "Bubonic plague - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Bubonic_plague",
+        "title": "Bubonic plague - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Columbian_exchange",
+        "title": "Columbian Exchange - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Genghis_Khan",
+        "title": "Genghis Khan - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Middle_Ages",
+        "title": "Middle Ages - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Medieval",
+        "title": "Middle Ages - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Late_middle_ages",
+        "title": "Middle Ages - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Napoleon_Bonaparte",
+        "title": "Napoleon - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Norway",
+        "title": "Norway - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/World_Health_Organization",
+        "title": "World Health Organization - Simple English Wikipedia, the free encyclopedia"
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "query": "climate change",
+    "intent": "Climate change and agreements about it",
+    "pages": [
+      {
+        "url": "https://simple.wikipedia.org/wiki/Africa",
+        "title": "Africa - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Arctic_Ocean",
+        "title": "Arctic Ocean - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Australia",
+        "title": "Australia - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Canada",
+        "title": "Canada - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/China",
+        "title": "China - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Climate",
+        "title": "Climate - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Climate_change",
+        "title": "Climate change - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Country",
+        "title": "Country - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Denmark",
+        "title": "Denmark - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Earth",
+        "title": "Earth - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Earth_science",
+        "title": "Earth science - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Europe",
+        "title": "Europe - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/France",
+        "title": "France - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Germany",
+        "title": "Germany - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Global_warming",
+        "title": "Global warming - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/India",
+        "title": "India - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Italy",
+        "title": "Italy - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Japan",
+        "title": "Japan - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Paris_Agreement",
+        "title": "Paris Agreement - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Science",
+        "title": "Science - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Scientific",
+        "title": "Science - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Southern_Europe",
+        "title": "Southern Europe - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Temperate",
+        "title": "Temperate climate - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Temperate_zone",
+        "title": "Temperate climate - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/United_Kingdom",
+        "title": "United Kingdom - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/United_States",
+        "title": "United States - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Water",
+        "title": "Water - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Weather",
+        "title": "Weather - Simple English Wikipedia, the free encyclopedia"
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "query": "christopher columbus",
+    "intent": "Christopher Columbus and his voyages",
+    "pages": [
+      {
+        "url": "https://simple.wikipedia.org/wiki/Age_of_Discovery",
+        "title": "Age of Discovery - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Americas",
+        "title": "Americas - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Christopher_Columbus",
+        "title": "Christopher Columbus - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Colombia",
+        "title": "Colombia - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Colonization",
+        "title": "Colonization - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Dominican_Republic",
+        "title": "Dominican Republic - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Empire",
+        "title": "Empire - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Hispaniola",
+        "title": "Hispaniola - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Lettuce",
+        "title": "Lettuce - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Middle_Ages",
+        "title": "Middle Ages - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/New_York_City",
+        "title": "New York City - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Ni%C3%B1a",
+        "title": "Niña - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Pinta_(ship)",
+        "title": "Pinta (ship) - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Puerto_Rico",
+        "title": "Puerto Rico - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Renaissance",
+        "title": "Renaissance - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Santa_Maria",
+        "title": "Santa Maria - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Spain",
+        "title": "Spain - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Ta%C3%ADno",
+        "title": "Taíno - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/The_Bahamas",
+        "title": "The Bahamas - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/United_States",
+        "title": "United States - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Water",
+        "title": "Water - Simple English Wikipedia, the free encyclopedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/Main_Page",
+        "title": "Wikipedia"
+      },
+      {
+        "url": "https://simple.wikipedia.org/wiki/World's_Columbian_Exposition",
+        "title": "World's Columbian Exposition - Simple English Wikipedia, the free encyclopedia"
+      }
+    ]
+  }
+]

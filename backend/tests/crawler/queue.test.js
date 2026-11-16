@@ -160,3 +160,26 @@ test("backoffDelay doubles per attempt, is capped, and adds jitter", () => {
   const spread = new Set(Array.from({ length: 50 }, () => backoffDelay(2, opts)));
   assert.ok(spread.size > 1, "jitter makes retries differ");
 });
+
+test("higher priority is leased first; equal priority stays oldest-first", async () => {
+  const { queue, clock } = makeQueue();
+  const first = newMessage();
+  const second = newMessage();
+  const third = newMessage();
+  await queue.enqueue(first);
+  clock.t += 1000;
+  await queue.enqueue(second);
+  clock.t += 1000;
+  await queue.enqueue(third);
+  await queue.bumpPriority([third.urlId], 2);
+  assert.equal(String((await queue.lease("A")).urlId), String(third.urlId), "priority 2 beats older messages");
+  assert.equal(String((await queue.lease("A")).urlId), String(first.urlId), "then FIFO among priority 0");
+});
+
+test("bumpPriority only touches waiting messages", async () => {
+  const { queue } = makeQueue();
+  const busy = newMessage();
+  await queue.enqueue(busy);
+  await queue.lease("A");
+  assert.equal(await queue.bumpPriority([busy.urlId]), 0);
+});

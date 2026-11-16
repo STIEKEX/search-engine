@@ -22,6 +22,7 @@ export const DEFAULT_JOB_LIMITS = {
   maxPagesPerHost: 100,
   excludePatterns: [],
   sameHostOnly: true,
+  order: "bfs", // "bfs" = oldest first; "inlinks" = most linked-to first
 };
 
 export async function createJob({ seeds, limits = {} }, queues) {
@@ -59,7 +60,9 @@ export function admitLinks(job, parent, links, queues) {
  * existing URLs are left alone, and enqueueing is a no-op for queued ones.
  */
 export async function admitUrls(job, candidates, { fetchQueue }, { cap = Infinity } = {}) {
-  const allowed = candidates.filter((c) => isAllowedCandidate(job, c));
+  // Page budget used up: nothing new could ever be fetched, so admitting it
+  // would only create work that has to be skipped again.
+  const allowed = job.budgetExhaustedAt ? [] : candidates.filter((c) => isAllowedCandidate(job, c));
   const accepted = dedupeByUrl(allowed).slice(0, cap); // filter first, then cap
   const excluded = candidates.length - accepted.length;
 
@@ -71,12 +74,46 @@ export async function admitUrls(job, candidates, { fetchQueue }, { cap = Infinit
     // repairs it. enqueueMany ignores URLs that already have a message.
     const waiting = await CrawlUrl.find({ jobId: job._id, normalizedUrl: { $in: accepted.map((c) => c.url) }, state: "queued" }, { _id: 1 }).lean();
     await fetchQueue.enqueueMany(waiting.map((u) => ({ jobId: job._id, urlId: u._id })));
+    // Priority crawling: every page that links to a waiting URL is one vote
+    // for it (new URLs go 0 -> 1, known ones n -> n + 1). With a page budget,
+    // widely linked pages ("India", "Water") get crawled before one-off ones.
+    // A heuristic: a redelivered parse message may count its links twice.
+    if (job.limits.order === "inlinks") await fetchQueue.bumpPriority(waiting.map((u) => u._id));
   }
   await CrawlJob.updateOne(
     { _id: job._id },
     { $inc: { "counters.urlsAdmitted": inserted, "counters.duplicateUrls": accepted.length - inserted, "counters.excludedUrls": excluded } },
   );
   return { inserted, duplicates: accepted.length - inserted, excluded };
+}
+
+const DROP_BATCH = 1000; // URL ids per bulk update/delete
+
+/**
+ * maxPages is used up. Without this, every URL still waiting in the fetch
+ * queue would be leased and skipped ONE BY ONE: on a big site that is
+ * thousands of round trips (hours on Atlas). Instead, drop them in bulk.
+ *
+ * Only URLs that have NOT taken budget are dropped. A budgeted URL is either
+ * being fetched right now or waiting for a retry; its page counts against
+ * maxPages and must still be completed. Runs once per job (the flag).
+ */
+export async function onPageBudgetExhausted(jobId, { fetchQueue }) {
+  const flagged = await CrawlJob.updateOne({ _id: jobId, budgetExhaustedAt: null }, { $set: { budgetExhaustedAt: new Date() } });
+  if (flagged.modifiedCount === 0) return 0; // another worker already did it
+
+  const ids = (await CrawlUrl.find({ jobId, state: "queued", "fetch.budgeted": false }, { _id: 1 }).lean()).map((u) => u._id);
+  for (let i = 0; i < ids.length; i += DROP_BATCH) {
+    const batch = ids.slice(i, i + DROP_BATCH);
+    // URL first, then message: a worker that leases one of these messages in
+    // between sees "skipped" and just acks it.
+    await CrawlUrl.updateMany(
+      { _id: { $in: batch }, state: "queued", "fetch.budgeted": false },
+      { $set: { state: "skipped", skipReason: "max_pages" } },
+    );
+    await fetchQueue.deleteReady(jobId, { urlIds: batch });
+  }
+  return ids.length;
 }
 
 function isAllowedCandidate(job, c) {
@@ -147,8 +184,8 @@ function newUrlDoc(job, c) {
  * "0 pending" can only be seen once the whole crawl is really finished.
  */
 export async function maybeCompleteJob(jobId, { fetchQueue, parseQueue }) {
-  const [fetchPending, parsePending] = await Promise.all([fetchQueue.countPending(jobId), parseQueue.countPending(jobId)]);
-  if (fetchPending + parsePending > 0) return false;
+  const [fetchPending, parsePending] = await Promise.all([fetchQueue.hasPending(jobId), parseQueue.hasPending(jobId)]);
+  if (fetchPending || parsePending) return false;
 
   const job = await CrawlJob.findById(jobId).lean();
   if (!job || job.status !== "running") return false;
@@ -214,4 +251,42 @@ export async function retryFailures(jobId, { fetchQueue, parseQueue }) {
     );
   }
   return retried;
+}
+
+/**
+ * Re-crawl: queue again the pages of a job that were fetched before
+ * `olderThanMs` ago. The fetch worker sends the stored validators, so an
+ * unchanged page costs one tiny "304 Not Modified" and is not parsed again;
+ * a changed page goes through fetch -> parse as usual.
+ * No page budget is used (these URLs were counted the first time), and no
+ * new links are admitted if the job's budget is already used up.
+ * @returns {Promise<number>} how many pages were queued
+ */
+export async function refreshJob(jobId, { olderThanMs, limit = 1000 }, { fetchQueue }) {
+  const job = await CrawlJob.findById(jobId).lean();
+  if (!job) throw new JobNotFoundError(`Job ${jobId} not found`);
+  if (job.status === "cancelled") throw new JobStateError("Cannot refresh a cancelled job");
+
+  const cutoff = new Date(Date.now() - olderThanMs);
+  const urls = await CrawlUrl.find({ jobId, state: { $in: ["parsed", "duplicate"] }, "fetch.fetchedAt": { $lte: cutoff } }, { state: 1 })
+    .sort({ "fetch.fetchedAt": 1 }) // stalest first
+    .limit(limit)
+    .lean();
+  if (urls.length === 0) return 0;
+
+  // parsed | duplicate -> queued, remembering where to return if unchanged.
+  // Conditional per URL (WHERE state = its old state), like transition().
+  const moved = await CrawlUrl.bulkWrite(
+    urls.map((u) => ({
+      updateOne: { filter: { _id: u._id, state: u.state }, update: { $set: { state: "queued", "fetch.previousState": u.state } } },
+    })),
+    { ordered: false },
+  );
+  // Re-open the job (with a fresh time budget) so the workers take its messages.
+  await CrawlJob.updateOne(
+    { _id: jobId },
+    { $set: { status: "running", finishedAt: null, completionReason: null, deadline: new Date(Date.now() + job.limits.jobTimeoutMs) } },
+  );
+  await fetchQueue.enqueueMany(urls.map((u) => ({ jobId: job._id, urlId: u._id })));
+  return moved.modifiedCount;
 }

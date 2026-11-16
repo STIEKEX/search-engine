@@ -17,6 +17,10 @@ export async function finish(queue, msg, job, queues) {
   if (job) await maybeCompleteJob(job._id, queues);
 }
 
+// Returned by a handler that put its message back for later (politeness):
+// runWorker then pauses briefly instead of leasing again straight away.
+export const DEFERRED = "deferred";
+
 // A paused job's message goes back to the queue. The 1 s delay stops this
 // worker from leasing it again straight away, before its list of paused jobs
 // (refreshed every second in runWorker) has caught up.

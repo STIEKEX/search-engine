@@ -7,3 +7,6 @@ node_modules/
 
 # Crawler output (raw HTML and extracted text files)
 /backend/data/
+
+# React build output
+/client/dist/

@@ -30,6 +30,13 @@ const crawlUrlSchema = new mongoose.Schema(
       charset: { type: String, default: null },
       sizeBytes: { type: Number, default: null },
       fetchedAt: { type: Date, default: null },
+      // Re-crawl: validators from the last response (sent back as
+      // If-None-Match / If-Modified-Since), and the state to return to if
+      // the page turns out unchanged. previousState is set only while a
+      // re-crawl of this URL is pending.
+      etag: { type: String, default: null },
+      lastModified: { type: String, default: null },
+      previousState: { type: String, default: null },
     },
     parse: {
       attempts: { type: Number, default: 0 },
@@ -42,7 +49,9 @@ const crawlUrlSchema = new mongoose.Schema(
     textRef: { type: String, default: null },
     title: { type: String, default: null },
     canonicalUrl: { type: String, default: null },
-    outlinks: { type: [String], default: [] },
+    // A page's outgoing links are NOT stored here: they live once, on its
+    // Content document (Content.outlinks, read by PageRank). Keeping a second
+    // copy per URL used to take ~26 KB per page, most of this collection.
     discoveredAt: { type: Date, default: Date.now },
   },
   { versionKey: false },

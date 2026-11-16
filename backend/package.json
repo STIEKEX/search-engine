@@ -9,6 +9,11 @@
     "crawl": "node --env-file=.env crawler/crawl.js",
     "worker:fetch": "node --env-file=.env crawler/workers/fetchWorker.js",
     "worker:parse": "node --env-file=.env crawler/workers/parseWorker.js",
+    "index:build": "node --env-file=.env indexer/buildIndex.js",
+    "eval:pool": "node --env-file=.env eval/pool.js",
+    "eval": "node --env-file=.env eval/evaluate.js",
+    "index:wiki": "node --env-file=.env indexer/buildIndex.js --exclude-host books.toscrape.com --exclude-url \"/wiki/(Wikipedia|Template|Template_talk|Help|Category|Portal|Talk|User|Special)(_talk)?:\"",
+    "import:medium": "node --env-file=.env crawler/rss/importMedium.js",
     "test": "node --test"
   },
   "keywords": [],
@@ -23,10 +28,13 @@
     "express": "^5.3.0",
     "mongoose": "^9.11.1",
     "robots-parser": "3.0.1",
+    "stemmer": "2.0.1",
     "undici": "8.12.2",
     "zod": "4.6.7"
   },
   "devDependencies": {
+    "graphology": "0.26.0",
+    "graphology-metrics": "2.4.2",
     "mongodb-memory-server": "11.3.0"
   }
 }

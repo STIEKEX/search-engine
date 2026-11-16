@@ -1,0 +1,15 @@
+{
+  "seeds": ["https://simple.wikipedia.org/wiki/Main_Page"],
+  "limits": {
+    "maxPages": 2000,
+    "maxPagesPerHost": 2000,
+    "maxDepth": 3,
+    "maxResponseBytes": 5242880,
+    "jobTimeoutMs": 10800000,
+    "excludePatterns": [
+      "^https://simple\\.wikipedia\\.org/(?!wiki/)",
+      "/wiki/(Special|Talk|User|Wikipedia|File|MediaWiki|Template|Help|Category|Portal|Module|Draft|TimedText)(_talk)?:",
+      "\\?"
+    ]
+  }
+}

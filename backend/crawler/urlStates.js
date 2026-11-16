@@ -1,7 +1,7 @@
 // The URL state machine. Every state change in Stage 2 goes through
 // transition(), never through a plain update, for two reasons:
 //
-// 1. Illegal moves are bugs, so we fail loudly (e.g. parsed -> queued).
+// 1. Illegal moves are bugs, so we fail loudly (e.g. skipped -> parsed).
 // 2. The database update is CONDITIONAL: "set state=parsed WHERE state=fetched".
 //    Queues deliver "at least once", so the same message can be processed
 //    twice (e.g. a worker was slow, its lease expired, another worker took
@@ -17,15 +17,19 @@
 //     │  └──► failed ◄────┘ │                  (permanent error or retries exhausted)
 //     │         │           │
 //     └─────────┴───────────┘                  (manual retry: POST /failures/retry)
+//
+//   Re-crawl (POST /jobs/:id/refresh): parsed | duplicate -> queued, and
+//   back with queued -> parsed | duplicate when the page has not changed
+//   (304 Not Modified, or the same bytes), skipping the parse step.
 
 export const URL_STATES = ["queued", "fetched", "parsed", "duplicate", "skipped", "failed"];
 
 export const TRANSITIONS = {
-  queued: ["fetched", "duplicate", "skipped", "failed"],
+  queued: ["fetched", "duplicate", "skipped", "failed", "parsed"], // parsed: unchanged on re-crawl
   fetched: ["parsed", "failed"],
   failed: ["queued", "fetched"], // retry of a dead fetch / dead parse message
-  parsed: [],
-  duplicate: [],
+  parsed: ["queued"], // re-crawl
+  duplicate: ["queued"], // re-crawl
   skipped: [],
 };
 
